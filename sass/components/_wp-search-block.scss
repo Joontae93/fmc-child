@@ -1,0 +1,26 @@
+.wp-block-button__link {
+    background-color: var(--color-secondary);
+    border: 3px solid var(--color-secondary);
+    transition: all .3s ease;
+    border-radius: 100em;
+    &:hover {
+        background-color: white !important;
+        color: var(--color-secondary);
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, .35);
+        transform: translateY(-4px);
+    }
+
+}
+#block-2 button.wp-block-search__button {
+    @extend .wp-block-button__link;
+}
+
+
+#block-2 .wp-block-search__inside-wrapper #wp-block-search__input-1,
+#block-2 .wp-block-search__inside-wrapper button.wp-block-search__button {
+    margin: 0 5px;
+}
+
+.wp-block-search__inside-wrapper {
+    align-items: center;
+}

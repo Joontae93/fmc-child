@@ -24,7 +24,7 @@ add_filter('x_enqueue_parent_stylesheet', '__return_true');
 // =============================================================================
 function child_enqueue_styles() {
     // enqueue child styles
-    wp_enqueue_style('fmcStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '0.1');
+    wp_enqueue_style('fmcStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '1.0');
     wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '1.0', true);
     wp_localize_script('fmc-data', 'fmcData', array(
         'root_url' => get_site_url(),

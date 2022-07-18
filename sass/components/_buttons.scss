@@ -1,0 +1,19 @@
+.btn {
+    display: inline-flex;
+    cursor: pointer;
+    padding: .575em .85em;
+    border-radius: 20em;
+    font-size: 1.2em;
+    margin: 1em 0;
+
+    &-primary {
+        color: white;
+        border: 3px solid var(--color-secondary);
+        background-color: var(--color-secondary);
+
+        &:hover {
+            background-color: transparent;
+            color: var(--color-secondary);
+        }
+    }
+}
