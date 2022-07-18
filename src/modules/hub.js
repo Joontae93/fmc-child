@@ -1,19 +1,23 @@
+import { fmcDate } from './utilities';
+
 /**
  * Alters CSS Display property of an HTML Element if day is Sunday
  */
 export function sundayMornings() {
-	if (location.href != 'https://firstchurch.net/hub') return;
 	const sundays = document.getElementById('sundayMornings');
-	const date = new Date.getDay();
+
+	// If Today is Sunday, quit.
+	if (fmcDate.getDay() === 0) return;
+
+	// Else, set section to "None"
 	displaySection(sundays, 'none');
-	if (date != 0) return;
-	displaySection(sundays, 'block');
 }
 
 /** Set CSS Display value for a section
  * @param section {HTML} the Element to modify
- * @param display {string} the CSS value to set
+ * @param displayValue {string} the CSS value to set
  */
-function displaySection(section, display) {
-	section.style.display = display;
+function displaySection(section, displayValue) {
+	section.style.display = displayValue;
+	return section;
 }

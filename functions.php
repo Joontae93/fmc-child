@@ -24,8 +24,8 @@ add_filter('x_enqueue_parent_stylesheet', '__return_true');
 // =============================================================================
 function child_enqueue_styles() {
     // enqueue child styles
-    wp_enqueue_style('fmc-styles', get_stylesheet_directory_uri() . '/build/index.css', array());
-    wp_enqueue_script('fmc-js', get_stylesheet_directory_uri() . '/build/index.js', array());
+    wp_enqueue_style('fmcStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '0.1');
+    wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '1.0', true);
     wp_localize_script('fmc-data', 'fmcData', array(
         'root_url' => get_site_url(),
         'day' => date('D'),
@@ -34,7 +34,7 @@ function child_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 
-add_action('init', 'add_cors_http_header');
-function add_cors_http_header() {
-    header("Access-Control-Allow-Origin: https://cdn.shortpixel.ai/spai/*");
-}
+// add_action('init', 'add_cors_http_header');
+// function add_cors_http_header() {
+//     header("Access-Control-Allow-Origin: https://cdn.shortpixel.ai/spai/*");
+// }
