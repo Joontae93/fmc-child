@@ -1,0 +1,55 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./sass/main.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.mec-event {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 2em;
+}
+.mec-event .x-main.left header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.mec-event .x-main.left header h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  margin: 0;
+  font-weight: 900;
+}
+.mec-event .x-main.left header figure {
+  margin: 0;
+  margin-bottom: 1em;
+}
+.mec-event-details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 1em;
+  border: 2px solid green;
+}
+.mec-event-details h2 {
+  margin: 0;
+  border-bottom: 1px solid #003364;
+  margin-bottom: 2em;
+}
+
+.flip-clock-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.flip-clock-wrapper ul {
+  list-style: none;
+}
+
+/*# sourceMappingURL=index.css.map*/
