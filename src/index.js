@@ -1,2 +1,7 @@
 import '../sass/main.scss';
-console.log('Hello from Index.JS!');
+import { sundayMornings } from './modules/hub';
+
+function init() {
+	sundayMornings();
+}
+init();

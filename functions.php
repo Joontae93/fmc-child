@@ -26,8 +26,15 @@ function child_enqueue_styles() {
     // enqueue child styles
     wp_enqueue_style('fmc-styles', get_stylesheet_directory_uri() . '/build/index.css', array());
     wp_enqueue_script('fmc-js', get_stylesheet_directory_uri() . '/build/index.js', array());
-    wp_localize_script('k1-js', 'fmcData', array(
-        'root_url' => get_site_url()
+    wp_localize_script('fmc-data', 'fmcData', array(
+        'root_url' => get_site_url(),
+        'day' => date('D'),
+        'year' => date('T')
     ));
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
+
+add_action('init', 'add_cors_http_header');
+function add_cors_http_header() {
+    header("Access-Control-Allow-Origin: https://cdn.shortpixel.ai/spai/*");
+}
