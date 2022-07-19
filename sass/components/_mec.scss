@@ -1,10 +1,14 @@
 .mec-wrap {
     article.mec-single-event {
         .mec-event-content {
-            .mec-single-event-description.mec-events-content * {
-                font-size: 1.6rem;
-                color:#545454;
-            }
+            .mec-single-event-description.mec-events-content 
+            {
+                p, ul li {
+                    font-size: 1.6rem;
+                    color:#545454;
+                    font-weight: 300;
+                }
+
         }
     }
-}
+}}
