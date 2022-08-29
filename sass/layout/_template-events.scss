@@ -1,5 +1,135 @@
-#x-root #x-site  {
-    #main-content {
-        padding-bottom:65px;
+.mec-events {
+    display: grid;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 88%;
+    margin: 0 auto;
+    grid-template-columns: 2fr 1fr;
+
+    @media only screen and (max-width:766px) {
+        grid-template-columns: 1fr;
+    }
+
+    .the-event {
+        grid-column: 1 / 2;
+    }
+
+    .the-sidebar {
+        grid-column: 2 / 3;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .the-meta {
+        grid-column: 1 / 2;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        @media screen and (min-width:767px) {
+            grid-column: 2 / 3;
+        }
+    }
+
+    .x-container.mec-breadcrumbs {
+        margin: 2em auto;
+    }
+
+
+    .featured-image {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin: 0;
+        margin-bottom: 2em;
+    }
+
+    // THE META
+    .mec-event-meta {
+        display: flex;
+
+        .mec-single-event {
+            &-date {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                & dl {
+                    margin: 0;
+
+                    dd {
+                        margin: 0;
+                    }
+                }
+            }
+
+            &-time {
+                @extend .mec-single-event-date;
+            }
+        }
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    // TAGS
+    .the-tags {
+        display: inline-flex;
+        align-items: flex-end;
+        background-color: #f7f7f7;
+        width: auto;
+        padding: 1em;
+
+        h4 {
+            margin: 0;
+            margin-right: 1em;
+
+        }
+
+        .mec-tags-list {
+            list-style: none;
+            margin: 0;
+        }
+    }
+
+    .the-sidebar {
+
+        // SOCIAL
+        .mec-social-single.mec-frontbox-title {
+            margin: 0;
+            margin-bottom: 1em;
+        }
+
+        .mec-links-details ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+
+            .mec-event-social-icon {
+                font-size: 3em;
+                margin: 0 5px;
+            }
+        }
+
+        // CALENDAR
+        .mec-event-export-module.mec-frontbox {
+            border: 2px solid #ddd;
+            padding: 2em;
+            width: 100%;
+
+            .mec-export-details ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-evenly;
+                margin: 0;
+
+                .mec-events-gcal {
+                    display: inline-block;
+                }
+            }
+        }
     }
 }
