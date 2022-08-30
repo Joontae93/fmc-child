@@ -1,12 +1,11 @@
 .mec-wrap {
     article.mec-single-event {
         .mec-event-content {
-            .mec-single-event-description.mec-events-content {
-
-                p,
-                ul li {
+            .mec-single-event-description.mec-events-content 
+            {
+                p, ul li {
                     font-size: 1.6rem;
-                    color: #545454;
+                    color:#545454;
                     font-weight: 300;
                 }
             }
@@ -15,35 +14,40 @@
 }
 
 .mec-reg-btn.mec-frontbox {
-    display: inline-block;
-    padding: .575em .85em;
+    display:inline-block;
+    padding:.575em .85em;
     background-color: $color-secondary;
-    border: 3px solid $color-secondary;
-    border-radius: 7em;
-    ;
+    border:3px solid $color-secondary;
+    border-radius: 7em;;
     transition: all $transition--standard;
     cursor: pointer;
-
     .mec-booking-button.mec-bg-color {
         transition: all $transition--standard;
-        padding: .575em .85em;
-        font-family: 'Work Sans', sans-serif;
+        padding:.575em .85em;
+        font-family: 'Work Sans',sans-serif;
         text-transform: uppercase;
         font-weight: 700;
-        color: white;
-        margin: 5px;
+        color:white;
+        margin:5px;
         background: none !important;
     }
-
     &:hover {
-        border: 3px solid $color-secondary;
+        border:3px solid $color-secondary;
         background-color: white;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, .35);
+        box-shadow: 2px 2px 4px rgba(0,0,0,.35);
         transform: translateY(-4px);
-
+        
         .mec-booking-button.mec-bg-color {
             background: white;
-            color: $color-secondary;
+            color:$color-secondary;
         }
     }
+}
+.mec-events {
+    h3 {
+            margin: 0;
+        }
+}
+.x-container.mec-breadcrumbs {
+    margin: 2em auto;
 }
