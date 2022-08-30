@@ -1,0 +1,24 @@
+// THE META
+.the-event__meta {
+	display: flex;
+	.mec-single-event {
+		&-date {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			& dl {
+				margin: 0;
+
+				dd {
+					margin: 0;
+				}
+			}
+		}
+
+		&-time {
+			@extend .mec-single-event-date;
+		}
+	}
+}

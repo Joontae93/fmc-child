@@ -1,0 +1,23 @@
+.the-event__tags {
+	display: inline-flex;
+	align-items: flex-end;
+	background-color: #f7f7f7;
+	width: auto;
+	padding: 1em;
+
+	h4 {
+		margin: 0;
+		margin-right: 1em;
+	}
+
+	&-list {
+		list-style: none;
+		margin: 0;
+		display: inline-flex;
+		justify-content: space-evenly;
+
+		& li:not(:last-child) {
+			margin-right: 1em;
+		}
+	}
+}

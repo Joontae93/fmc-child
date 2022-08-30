@@ -1,5 +1,34 @@
-#x-root #x-site  {
-    #main-content {
-        padding-bottom:65px;
-    }
+.the-event {
+	display: grid;
+	justify-content: space-between;
+	max-width: 1200px;
+	width: 88%;
+	margin: 0 auto;
+	grid-template-columns: 2fr 1fr;
+	@media only screen and (max-width: 766px) {
+		grid-template-columns: 1fr;
+	}
+	.the-sidebar {
+		grid-column: 2 / 3;
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+	}
+	.the-meta {
+		grid-column: 1 / 2;
+		background-color: #f7f7f7;
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		@media screen and (min-width: 767px) {
+			grid-column: 2 / 3;
+		}
+	}
+
+	&__image {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+		margin: 0;
+		margin-bottom: 2em;
+	}
 }
