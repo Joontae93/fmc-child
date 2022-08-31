@@ -1,14 +1,5 @@
-@use "../abstracts/mixins";
+@use '../abstracts/mixins';
 
-.debug {
-	text-transform: uppercase;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: red;
-	z-index: 2;
-	padding: 5px;
-}
 .the-event {
 	& > * {
 		position: relative;
@@ -101,32 +92,5 @@
 				grid-row: 5 / 6;
 			}
 		}
-=======
-	@media only screen and (max-width: 766px) {
-		grid-template-columns: 1fr;
-	}
-	.the-sidebar {
-		grid-column: 2 / 3;
-		padding: 1em;
-		display: flex;
-		flex-direction: column;
-	}
-	.the-meta {
-		grid-column: 1 / 2;
-		background-color: #f7f7f7;
-		display: flex;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-		@media screen and (min-width: 767px) {
-			grid-column: 2 / 3;
-		}
-	}
-
-	&__image {
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
-		margin: 0;
-		margin-bottom: 2em;
-
 	}
 }
