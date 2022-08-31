@@ -11,7 +11,6 @@
   "author": "KJ Roelke",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/scripts": "^23.4.0",
-    "sass-migrator": "^1.5.6"
+    "@wordpress/scripts": "^23.4.0"
   }
 }

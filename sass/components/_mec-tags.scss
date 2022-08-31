@@ -1,6 +1,14 @@
+@use '../abstracts/mixins';
+
 .the-event__tags {
-	display: inline-flex;
-	align-items: flex-end;
+	@include mixins.displayFlex(column);
+	@include mixins.respond(Tablet) {
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: baseline;
+		margin: 2em 0;
+	}
 	background-color: #f7f7f7;
 	width: auto;
 	padding: 1em;
@@ -13,11 +21,20 @@
 	&-list {
 		list-style: none;
 		margin: 0;
-		display: inline-flex;
-		justify-content: space-evenly;
-
-		& li:not(:last-child) {
-			margin-right: 1em;
+		margin-left: 1em;
+		@include mixins.displayFlex(column);
+		@include mixins.respond(Tablet) {
+			margin-left: 0;
+			display: inline-flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: flex-end;
+		}
+		& li {
+			width: fit-content;
+			&:not(:last-child) {
+				margin-right: 1em;
+			}
 		}
 	}
 }
