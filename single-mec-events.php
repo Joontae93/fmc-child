@@ -24,6 +24,7 @@ get_header();
                 <? the_post_thumbnail('full'); ?>
             </figure>
             <aside class="the-event__meta">
+                <span class="debug">the meta</span>
                 <? $single->display_date_widget($single_event_obj); ?>
                 <? $single->display_time_widget($single_event_obj); ?>
             </aside>
@@ -41,6 +42,7 @@ get_header();
             </div>
             <!-- THE CONTENT -->
             <section class="the-event__content">
+                <span class="debug">the content</span>
                 <? the_content(); ?>
             </section>
             <? $single->display_register_button_widget($single_event_obj); ?>
@@ -51,8 +53,11 @@ get_header();
             <!-- COMMENTS -->
 
             <!-- START SIDEBAR -->
+            <div class="the-event__sidebar-header">
+                <h2>More Info</h2>
+            </div>
             <aside class="the-event__sidebar">
-                <h2 class='the-sidebar__header'>More Info</h2>
+                <span class="debug">the sidebar</span>
                 <?
           // THE SOCIAL SHARE
           $single->display_social_widget($single_event_obj);
