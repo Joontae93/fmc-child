@@ -24,7 +24,7 @@ get_header();
             <figure class="the-event__image">
                 <? the_post_thumbnail('full'); ?>
             </figure>
-            <aside class="the-event__meta">
+            <aside class="the-event__meta the-sidebar">
                 <? $single->display_date_widget($single_event_obj); ?>
                 <? $single->display_time_widget($single_event_obj); ?>
             </aside>
@@ -57,20 +57,21 @@ get_header();
             <!-- COMMENTS -->
 
             <!-- START SIDEBAR -->
-            <div class="the-event__sidebar-header">
+            <div class="the-sidebar the-sidebar__header">
                 <h2>More Info</h2>
             </div>
-            <aside class="the-event__sidebar">
-                <?
-                    // THE SOCIAL SHARE
-                    $single->display_social_widget($single_event_obj);
-                    // THE SCHEDULE
-                    $single->display_hourly_schedules_widget($single_event_obj);
-                    // CALENDAR EXPORT
-                    $single->display_export_widget($single_event_obj);
-                    ?>
-            </aside>
-            <? $single->display_booking_widget($single_event_obj, $single_event_main); ?>
+            <div class="the-sidebar the-sidebar__social">
+                <? $single->display_social_widget($single_event_obj); ?>
+            </div>
+            <div class="the-sidebar the-sidebar__schedule">
+                <? $single->display_hourly_schedules_widget($single_event_obj); ?>
+            </div>
+            <div class="the-sidebar the-sidebar__calendar">
+                <? $single->display_export_widget($single_event_obj); ?>
+            </div>
+            <div class="the-event__booking">
+                <? $single->display_booking_widget($single_event_obj, $single_event_main); ?>
+            </div>
             <!-- END SIDEBAR -->
         </div>
     </article>

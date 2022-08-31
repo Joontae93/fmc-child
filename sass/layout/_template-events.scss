@@ -28,7 +28,6 @@
 		}
 	}
 	&__meta {
-		grid-column: 2 / 3;
 		grid-row: 2 / 3;
 
 		background-color: #f7f7f7;
@@ -80,7 +79,6 @@
 
 	&__sidebar {
 		@include mixins.displayFlex(column);
-		grid-column: 2 / 3;
 		grid-row: 3 / 4;
 		padding: 1em;
 		& > div {
@@ -91,17 +89,39 @@
 			grid-column: unset;
 			grid-row: 7 / 8;
 		}
-		&-header {
-			grid-column: 2 / 3;
-			grid-row: 1 / 2;
+	}
+}
+
+.the-sidebar {
+	grid-column: 2 / 3;
+	@include mixins.respond(Laptop) {
+		grid-column: 1 / 2;
+		grid-row: auto;
+	}
+
+	&__header {
+		grid-row: 1 / 2;
+		h2 {
 			height: fit-content;
-			h2 {
-				margin: 0;
-			}
-			@include mixins.respond(Laptop) {
-				grid-column: unset;
-				grid-row: 6 / 7;
-			}
+			margin: 0;
+		}
+		@include mixins.respond(Laptop) {
+			grid-row: auto;
+		}
+	}
+	&__social {
+		grid-row: 5 / 6;
+	}
+	&__schedule {
+		grid-row: 4 / 5;
+		@include mixins.respond(Laptop) {
+			grid-row: auto;
+		}
+	}
+	&__calendar {
+		grid-row: 3 / 4;
+		@include mixins.respond(Laptop) {
+			grid-row: auto;
 		}
 	}
 }
