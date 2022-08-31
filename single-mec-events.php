@@ -68,14 +68,11 @@ get_header();
           // BOOKING
           $single->display_booking_widget($single_event_obj, $single_event_main);
           ?>
-
             </aside>
             <!-- END SIDEBAR -->
         </div>
     </article>
-
     <?php endwhile; ?>
-
 </div>
 
 <?php get_footer(); ?>

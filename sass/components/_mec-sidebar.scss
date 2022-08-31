@@ -22,6 +22,7 @@
 	// CALENDAR
 	.mec-event-export-module.mec-frontbox {
 		.mec-export-details ul {
+
 			@include mixins.displayFlex(row, space-evenly, flex-start, nowrap);
 			list-style: none;
 			margin: 0;
