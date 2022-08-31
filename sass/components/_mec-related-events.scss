@@ -1,0 +1,16 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+.mec-related-events {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(150px, 300px));
+	gap: 2em;
+	width: 100%;
+	.mec-related-event-post.col-md-3.col-sm-3 {
+		transition: all variables.$transition--standard;
+		&:hover {
+			cursor: pointer;
+			transform: translateY(-4px);
+			@include mixins.dropShadow;
+		}
+	}
+}

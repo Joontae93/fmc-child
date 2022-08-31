@@ -1,19 +1,51 @@
+@use '../abstracts/variables';
 .btn {
-    display: inline-flex;
-    cursor: pointer;
-    padding: .575em .85em;
-    border-radius: 20em;
-    font-size: 1.2em;
-    margin: 1em 0;
+	display: inline-flex;
+	cursor: pointer;
+	padding: 0.575em 0.85em;
+	border-radius: 20em;
+	font-size: 1.2em;
+	margin: 1em 0;
 
-    &-primary {
-        color: white;
-        border: 3px solid var(--color-secondary);
-        background-color: var(--color-secondary);
+	&-primary {
+		color: white;
+		border: 3px solid var(--color-secondary);
+		background-color: var(--color-secondary);
 
-        &:hover {
-            background-color: transparent;
-            color: var(--color-secondary);
-        }
-    }
+		&:hover {
+			background-color: transparent;
+			color: var(--color-secondary);
+		}
+	}
+}
+.mec-reg-btn.mec-frontbox {
+	display: inline-block;
+	width: fit-content;
+	padding: 0.575em 0.85em;
+	background-color: variables.$color-secondary;
+	border: 3px solid variables.$color-secondary;
+	border-radius: 7em;
+	transition: all variables.$transition--standard;
+	cursor: pointer;
+	.mec-booking-button.mec-bg-color {
+		transition: all variables.$transition--standard;
+		padding: 0.575em 0.85em;
+		font-family: 'Work Sans', sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: white;
+		margin: 5px;
+		background: none !important;
+	}
+	&:hover {
+		border: 3px solid variables.$color-secondary;
+		background-color: white;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+		transform: translateY(-4px);
+
+		.mec-booking-button.mec-bg-color {
+			background: white;
+			color: variables.$color-secondary;
+		}
+	}
 }
