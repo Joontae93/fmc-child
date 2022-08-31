@@ -33,9 +33,9 @@ get_header();
             <div class="the-event__tags">
                 <h4>Tags: </h4>
                 <ul class="the-event__tags-list">
-                    <? $mectags = get_the_tags(); ?>
-                    <? foreach ($mectags as $mectag) : ?>
-                    <? echo "<li><a href='$mectag->slug'>$mectag->name</a></li>"; ?>
+                    <? $tags = get_the_tags(); ?>
+                    <? foreach ($tags as $tag) : ?>
+                    <? echo "<li><a href='$tag->slug'>$tag->name</a></li>"; ?>
                     <? endforeach; ?>
                 </ul>
             </div>
