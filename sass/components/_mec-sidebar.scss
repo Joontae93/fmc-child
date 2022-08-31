@@ -1,4 +1,5 @@
-@use "../abstracts/variables";
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
 
 .the-event__sidebar {
 	&__header {
@@ -8,14 +9,11 @@
 	// SOCIAL
 	.mec-social-single.mec-frontbox-title {
 		margin: 0;
-		// margin-bottom: 1em;
 	}
 	.mec-links-details ul {
+		@include mixins.displayFlex(row, space-evenly);
 		list-style: none;
-		display: flex;
 		margin: 0;
-		justify-content: space-evenly;
-
 		.mec-event-social-icon {
 			font-size: 2.5em;
 			margin: 0 5px;
@@ -24,9 +22,8 @@
 	// CALENDAR
 	.mec-event-export-module.mec-frontbox {
 		.mec-export-details ul {
+			@include mixins.displayFlex(row, space-evenly, flex-start, nowrap);
 			list-style: none;
-			display: flex;
-			justify-content: space-evenly;
 			margin: 0;
 
 			.mec-events-gcal {

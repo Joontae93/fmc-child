@@ -1,16 +1,12 @@
+@use '../abstracts/mixins';
 // THE META
 .the-event__meta {
-	display: flex;
+	@include mixins.displayFlex;
 	.mec-single-event {
 		&-date {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
+			@include mixins.displayFlex(column, center, center);
 			& dl {
 				margin: 0;
-
 				dd {
 					margin: 0;
 				}
