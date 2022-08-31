@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 .mec-wrap {
     article.mec-single-event {
         .mec-event-content {
@@ -16,13 +18,13 @@
 .mec-reg-btn.mec-frontbox {
     display:inline-block;
     padding:.575em .85em;
-    background-color: $color-secondary;
-    border:3px solid $color-secondary;
+    background-color: variables.$color-secondary;
+    border:3px solid variables.$color-secondary;
     border-radius: 7em;;
-    transition: all $transition--standard;
+    transition: all variables.$transition--standard;
     cursor: pointer;
     .mec-booking-button.mec-bg-color {
-        transition: all $transition--standard;
+        transition: all variables.$transition--standard;
         padding:.575em .85em;
         font-family: 'Work Sans',sans-serif;
         text-transform: uppercase;
@@ -32,14 +34,14 @@
         background: none !important;
     }
     &:hover {
-        border:3px solid $color-secondary;
+        border:3px solid variables.$color-secondary;
         background-color: white;
         box-shadow: 2px 2px 4px rgba(0,0,0,.35);
         transform: translateY(-4px);
         
         .mec-booking-button.mec-bg-color {
             background: white;
-            color:$color-secondary;
+            color:variables.$color-secondary;
         }
     }
 }

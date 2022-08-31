@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 .debug {
 	text-transform: uppercase;
 	position: absolute;
@@ -20,7 +22,7 @@
 	width: 88%;
 	margin: 0 auto;
 	grid-template-columns: 2fr 1fr;
-	@include respond(Laptop) {
+	@include mixins.respond(Laptop) {
 		grid-template-columns: max(100%);
 	}
 
@@ -29,7 +31,7 @@
 		grid-row: 1 / 4;
 		margin: 0;
 		margin-bottom: 2em;
-		@include respond(Laptop) {
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 1 / 2;
 		}
@@ -40,8 +42,8 @@
 
 		background-color: #f7f7f7;
 		height: fit-content;
-		@include displayFlex(row, space-evenly);
-		@include respond(Laptop) {
+		@include mixins.displayFlex(row, space-evenly);
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 3 / 4;
 		}
@@ -50,7 +52,7 @@
 		grid-column: 1 / 2;
 		grid-row: 4 / 5;
 		margin: 0;
-		@include respond(Laptop) {
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 2 / 3;
 		}
@@ -58,32 +60,32 @@
 	&__tags {
 		grid-column: 2 / 3;
 		grid-row: 4 / 5;
-		@include respond(Laptop) {
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 7 / 8;
 		}
 	}
 	&__content {
 		grid-column: 1 / 2;
-		@include respond(Laptop) {
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 4 / 5;
 		}
 	}
 	&__related-events {
 		grid-column: 1 / 2;
-		@include respond(Laptop) {
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 8 / 9;
 		}
 	}
 
 	&__sidebar {
-		@include displayFlex(column);
+		@include mixins.displayFlex(column);
 		grid-column: 2 / 3;
 		grid-row: 3 / 4;
 		padding: 1em;
-		@include respond(Laptop) {
+		@include mixins.respond(Laptop) {
 			grid-column: unset;
 			grid-row: 6 / 7;
 		}
@@ -94,7 +96,7 @@
 			h2 {
 				margin: 0;
 			}
-			@include respond(Laptop) {
+			@include mixins.respond(Laptop) {
 				grid-column: unset;
 				grid-row: 5 / 6;
 			}

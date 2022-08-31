@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 .the-event__sidebar {
 	&__header {
 		margin: 0;
@@ -31,14 +33,14 @@
 				display: inline-block;
 
 				&.mec-color.mec-bg-color-hover.mec-border-color {
-					border-color: $color-secondary;
+					border-color: variables.$color-secondary;
 					background-color: white;
-					color: $color-secondary;
+					color: variables.$color-secondary;
 					padding: 1em;
 
 					&:hover {
 						color: white;
-						background-color: $color-secondary;
+						background-color: variables.$color-secondary;
 					}
 				}
 			}

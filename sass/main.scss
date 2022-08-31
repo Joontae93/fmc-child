@@ -1,14 +1,14 @@
-@import './abstracts/variables';
-@import './abstracts/mixins';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
 
-@import './base/reset';
+@use 'base/reset';
 
-@import './components/buttons';
-@import './components/wp-search-block';
+@use 'components/buttons';
+@use 'components/wp-search-block';
 
-@import './components/mec-meta';
-@import './components/mec-sidebar';
-@import './components/mec-tags';
-@import './components/mec';
+@use 'components/mec-meta';
+@use 'components/mec-sidebar';
+@use 'components/mec-tags';
+@use 'components/mec';
 
-@import './layout/template-events';
+@use 'layout/template-events';
