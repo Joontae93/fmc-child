@@ -29,9 +29,6 @@
 	}
 	&__meta {
 		grid-row: 2 / 3;
-
-		background-color: #f7f7f7;
-		height: fit-content;
 		@include mixins.displayFlex(row, space-evenly);
 		@include mixins.respond(Laptop) {
 			grid-column: unset;
@@ -89,6 +86,9 @@
 			grid-column: unset;
 			grid-row: 7 / 8;
 		}
+	}
+	&__occurences {
+		grid-row: 6 / 7;
 	}
 }
 
