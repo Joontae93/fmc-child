@@ -25,6 +25,12 @@ While I believe Ekklesia is a fine CMS and web builder, I decided migrate becaus
 
 This mostly exists so I could reset some annoying quirks of **Pro Theme** and have it abstracted away. There's more CSS in the theme's _Global CSS_ section, but some of this I wanted to feel "default to the theme" so I hid it away in the Child theme.
 
+### Custom Sections
+
+#### `mec-events.php`
+
+#### `search.php`
+
 ---
 
 # Questions or Comments?
