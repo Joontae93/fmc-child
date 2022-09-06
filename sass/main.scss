@@ -10,5 +10,7 @@
 @use 'components/mec-sidebar';
 @use 'components/mec-related-events';
 @use 'components/mec';
+@use 'components/search-results';
 
 @use 'layout/template-events';
+@use 'layout/search';

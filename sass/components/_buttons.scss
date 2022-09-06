@@ -1,4 +1,6 @@
 @use '../abstracts/variables';
+@use '../abstracts/mixins';
+
 .btn {
 	display: inline-flex;
 	cursor: pointer;
@@ -6,15 +8,29 @@
 	border-radius: 20em;
 	font-size: 1.2em;
 	margin: 1em 0;
+	transition: all variables.$transition--standard;
+	&:hover {
+		@include mixins.dropShadow;
+	}
 
 	&-primary {
 		color: white;
-		border: 3px solid var(--color-secondary);
-		background-color: var(--color-secondary);
+		border: 3px solid variables.$color-primary;
+		background-color: variables.$color-primary;
 
 		&:hover {
 			background-color: transparent;
-			color: var(--color-secondary);
+			color: variables.$color-primary;
+		}
+	}
+	&-secondary {
+		color: white;
+		border: 3px solid variables.$color-secondary;
+		background-color: variables.$color-secondary;
+
+		&:hover {
+			background-color: transparent;
+			color: variables.$color-secondary;
 		}
 	}
 }

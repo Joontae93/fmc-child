@@ -1,0 +1,27 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+.x-main {
+	.search-header {
+		background-color: variables.$color-primary;
+		padding: 65px 0;
+		& > * {
+			width: 88%;
+			margin: 0 auto;
+		}
+		&__headline {
+			color: white;
+		}
+		&__subheadline {
+			display: block;
+			color: white;
+		}
+	}
+	.results {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		@include mixins.respond(Tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+}

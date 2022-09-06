@@ -1,0 +1,33 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+.results {
+	width: 88%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 65px 0;
+	.the-post {
+		@include mixins.displayFlex(column);
+		border: 2px solid variables.$color-primary;
+		border-radius: 5px;
+		margin: 0;
+		overflow: hidden;
+		&__featured-image {
+			margin: 0;
+			border-bottom: 1px solid variables.$color-primary;
+			overflow: hidden;
+		}
+		&__content {
+			padding: 1em;
+			height: auto;
+		}
+		&__title {
+			margin: 0;
+		}
+		&__excerpt {
+			margin: 2em 0;
+		}
+		.btn {
+			margin-top: auto;
+		}
+	}
+}
