@@ -1,18 +1,24 @@
-import { fmcDate as today, querySelector } from './utilities';
+import { querySelector } from './utilities';
 
 export function menuControl() {
 	const meals = querySelector('.meals', true);
-	const sides = querySelector('.sides', true);
-	// const year = date.getFullYear(),
-	// 	month = date.getMonth(),
-	// 	day = date.getDay();
-	// const today = `${month}/${day}/${year}`;
-	// const todayDate = Date.parse(today);
-	// console.log(todayDate);
-	meals.forEach((el, i, arr) => {
-		const mealDateString = el.querySelector('.date');
-		const mealDate = Date.parse(mealDateString.innerText);
-		if (mealDate < Date.parse(today)) {
+	const sides = document.querySelectorAll('.sides');
+	sides.forEach((el) => {
+		const side = el.querySelectorAll('span');
+		side.forEach((el, i) => {
+			if (el.innerText != '') {
+				side[i].insertAdjacentHTML('afterend', `<br>`);
+			}
+		});
+	});
+	meals.forEach((el) => {
+		const mealDateStrings = el.querySelector('.date').innerText.split('/');
+		mealDateStrings.forEach((el, i, arr) => (arr[i] = parseInt(el)));
+		const [month, date, year] = mealDateStrings;
+		if (
+			parseInt(fmcData.today.month) >= month &&
+			parseInt(fmcData.today.dayNum) > date
+		) {
 			el.style.display = 'none';
 		}
 	});

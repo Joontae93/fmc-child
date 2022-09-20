@@ -1,8 +1,6 @@
-export var fmcDate = new Date();
 export function copyright(brandName) {
 	const copyright = document.getElementById('copyright');
-	const thisYear = fmcDate.getFullYear();
-	copyright.innerHTML = `<p>&copy; ${thisYear} ${brandName} <br/> All Rights Reserved.`;
+	copyright.innerHTML = `<p>&copy; ${fmcData.today.year} ${brandName} <br/> All Rights Reserved.`;
 }
 
 /** Shorthand for Query Selector Function.

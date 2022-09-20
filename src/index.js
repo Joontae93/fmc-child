@@ -7,14 +7,11 @@ import { menuControl } from './modules/wednesdayNightMenu';
 
 function init() {
 	copyright('First Methodist Carrollton');
-	if (location.href === 'https://firstchurch.net/hub/') sundayMornings();
-	if (location.href === 'https://firstchurch.net/jobs/') jobless();
-	if (
-		location.href === 'http://fmc.local/menu/' ||
-		location.href === 'https://firstchurch.net/menu'
-	)
-		menuControl();
-	relatedEventsControl();
+	const href = location.href;
+	if (href.includes('/hub')) sundayMornings();
+	if (href.includes('/jobs')) jobless();
+	if (href.includes('/menu')) menuControl();
+	if (href.includes('/events/')) relatedEventsControl();
 }
 
 init();

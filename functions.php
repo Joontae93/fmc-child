@@ -19,17 +19,21 @@
 add_filter('x_enqueue_parent_stylesheet', '__return_true');
 
 
-
 // Additional Functions
 // =============================================================================
 function child_enqueue_styles() {
     // enqueue child styles
     wp_enqueue_style('fmcStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '3.0.0');
-    wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '2.1.1', true);
-    wp_localize_script('fmc-data', 'fmcData', array(
+    wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '2.2.0', true);
+    wp_localize_script('fmcJS', 'fmcData', array(
         'root_url' => get_site_url(),
-        'day' => date('D'),
-        'year' => date('T')
+        'today' => array(
+            'month' => date('n'),
+            'dayNum' => date('j'),
+            'day' => date('D'),
+            'year' => date('Y'),
+        )
     ));
+    wp_enqueue_script('planningCenterForm', 'https://js.churchcenter.com/modal/v1', array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
