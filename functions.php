@@ -38,3 +38,23 @@ add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 // function add_cors_http_header() {
 //     header("Access-Control-Allow-Origin: https://cdn.shortpixel.ai/spai/*");
 // }
+function fmc_post_types() {
+    register_post_type('fmc-events', array(
+        'has_archive' => true,
+        'labels' => array(
+            'name' => 'Events',
+            'add_new_item' => "Add New Event",
+            'edit_item' => 'Edit Event',
+            'all_items' => 'All Events',
+            'singular_name' => 'Event'
+        ),
+        'menu-icon' => 'dashicons-calendar-alt',
+        'menu_position' => 5,
+        'public' => true,
+        'show_in_rest' => true,
+        'supports' => array(
+            'title', 'editor', 'comments', 'revisions', 'trackbacks', 'excerpt', 'thumbnail'
+        )
+    ));
+}
+add_action('init', 'fmc_post_types');
