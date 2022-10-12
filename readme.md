@@ -2,13 +2,15 @@
 
 Hi there! This theme was built by [K.J. Roelke](https://kjroelke.online) during his time at [First Methodist Carrollton](https://firstchurch.net). It is a child of [Pro Theme](https://theme.co/pro) and is specifically meant for this organiztion.
 
+---
+
 ## Changelog
 
 ## 2.2.0
 
 - Updated `init()`
 - Controlled `/menu` with Child Theme JS to hide Wednesday Nights that have already happened
-- Migrated customJS that adds line-breaks to sides into Child Theme.
+- Migrated customJS that adds line-breaks to side dishes into Child Theme.
 
 ## Previous Versions
 
@@ -22,6 +24,8 @@ Initially published in the summer of 2022 after KJ took over the Communications 
 
 While I believe Ekklesia is a fine CMS and web builder, I decided migrate because Wordpress is more ubiquitous and I believed I could make a highly specialized theme for the church. **Pro Theme** can be highly customized and extended (even at a code-base level) upon install, but I still felt that I should abstract away certain styles or functions in case the person after me was familiar with Wordpress as a CMS but wasn't a super-knowledgeable Full Stack Wordpress Developer (as is often the case with Communications Directors/Managers/Coordinators).
 
+---
+
 ## Child Theme Specs
 
 ### `functions.php`
@@ -31,7 +35,7 @@ While I believe Ekklesia is a fine CMS and web builder, I decided migrate becaus
 
 ### Custom JS
 
-Custom JS & planningCenterForm `<script>`s are loaded in footer.
+Custom JS & planningCenterForm `<script>`s are loaded in the footer. This section contains information pertaining to custom JS files that aren't attached to a specific page/section of the website.
 
 - `utilities.js`
   - The copyright in the Footer uses a simple IIFE to keep the year up-to-date.
@@ -41,7 +45,9 @@ Custom JS & planningCenterForm `<script>`s are loaded in footer.
 - `jobs.js`
   - Essentially, the same idea as `hub.js`, except it is used to hide the `archive-jobs` template (since that template is, apparently, based on Pro Theme's _Content / Sidebar Right_ layout)
     - I might upload a new php file to handle this...I just wrote a quick `js` file because I was already writing `js` files.
-    -
+- `wednesdayNightMenu.js`
+  - Hides menu items once their dates move to the past.
+  - Also adds a line break `<br/>` after each side dish (except the last one) so it looks pretty :P
 
 ### Custom CSS (SCSS)
 
@@ -51,7 +57,17 @@ This mostly exists so I could reset some annoying quirks of **Pro Theme** and ha
 
 #### `mec-events.php`
 
+For some reason, Modern Events Calendar doesn't fire properly. The Standard and Modern Single Event displays both miss key aspects, so I neeed to create a display page that contained everything I needed (and wanted).
+
+This page is styled with custom SCSS, bundled into the Child Theme.
+
+##### `mec-events.js`
+
+A simple function to hide the 'related-events' container if there are no related events to display (again, part of the buggy nature of this particular instance of MEC).
+
 #### `search.php`
+
+Once I built some Layouts in Cornerstone, the basic search archive page would get overridden by those Layouts, so this custom php file is to provide a more simple 'results' layout.
 
 ---
 

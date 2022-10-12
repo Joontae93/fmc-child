@@ -22,7 +22,6 @@ add_filter('x_enqueue_parent_stylesheet', '__return_true');
 // Additional Functions
 // =============================================================================
 function child_enqueue_styles() {
-    // enqueue child styles
     wp_enqueue_style('fmcStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '3.0.0');
     wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '2.2.0', true);
     wp_localize_script('fmcJS', 'fmcData', array(
