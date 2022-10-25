@@ -3,10 +3,13 @@
 .the-event-meta {
 	background-color: #f7f7f7;
 	height: fit-content;
-	@include mixins.displayFlex;
+	@include mixins.displayFlex(row, space-around);
+	padding: 1rem;
 	.mec-single-event {
 		&-date {
-			@include mixins.displayFlex(column, center, center);
+			@include mixins.displayFlex(column, center, flex-start);
+			margin: 0;
+			padding: 0;
 			& dl {
 				margin: 0;
 				dd {
@@ -20,41 +23,28 @@
 	}
 
 	&__tags {
-		@include mixins.displayFlex(row, flex-start, baseline);
-		@include mixins.respond(Laptop) {
-			@include mixins.displayFlex(column, center, center);
-			display: inline-flex;
-			margin: 2em 0;
-		}
+		@include mixins.displayFlex(row, flex-start, center);
 		background-color: #f7f7f7;
 		width: 100%;
 		padding: 1em;
-
+		gap: 1rem;
 		h4 {
 			margin: 0;
-			margin-right: 1em;
-			@include mixins.respond(Laptop) {
-				margin: 0;
-			}
 		}
 
 		&-list {
-			@include mixins.displayFlex(column);
-			display: inline-flex;
-			list-style: none;
+			@include mixins.displayFlex(row, space-evenly, center);
+			flex: 1 0 auto;
 			margin: 0;
-			margin-left: auto;
+			list-style: none;
 			@include mixins.respond(Laptop) {
-				margin-left: 0;
-				display: inline-flex;
-				flex-direction: row;
-				justify-content: space-evenly;
-				align-items: flex-end;
+				justify-content: flex-start;
+				flex-direction: column;
 			}
 			& li {
-				width: fit-content;
-				&:not(:last-child) {
-					margin-right: 1em;
+				flex: 1 1 auto;
+				&:hover {
+					text-decoration: underline;
 				}
 			}
 		}

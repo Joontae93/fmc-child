@@ -1,129 +1,71 @@
 @use '../abstracts/mixins';
 
 .the-event {
-	& > * {
-		position: relative;
-	}
-	display: grid;
-	justify-content: space-between;
-	justify-items: stretch;
-	align-items: start;
-	column-gap: 20px;
-	max-width: 1200px;
-	width: 88%;
-	margin: 0 auto;
-	grid-template-columns: 2fr 1fr;
+	@include mixins.displayFlex;
+	gap: 4rem;
+	position: relative;
+	padding-bottom: 6.5rem;
 	@include mixins.respond(Laptop) {
-		grid-template-columns: max(100%);
+		column-gap: 0;
+		row-gap: 4rem;
+	}
+	& .x-col {
+		&:nth-child(1) {
+			flex: 1 1 calc(60% - 4rem);
+			@include mixins.respond(Laptop) {
+				flex: unset;
+			}
+		}
+		&:nth-child(2) {
+			flex: 1 1 calc(40% - 4rem);
+			position: sticky;
+			top: 10%;
+			@include mixins.respond(Laptop) {
+				flex: unset;
+				position: relative;
+				top: unset;
+			}
+		}
 	}
 
 	&__image {
-		grid-column: 1 / 2;
-		grid-row: 1 / 4;
 		margin: 0;
-		margin-bottom: 2em;
-		@include mixins.respond(Laptop) {
-			grid-column: unset;
-			grid-row: 1 / 2;
-		}
+		aspect-ratio: 16 / 9;
+		object-fit: contain;
 	}
 	&__meta {
-		grid-row: 2 / 3;
-		grid-column: 2 / 3;
+		margin: 2em 0;
 		@include mixins.displayFlex(row, space-evenly);
-		@include mixins.respond(Laptop) {
-			grid-column: unset;
-			grid-row: 3 / 4;
-		}
 	}
-	&__title {
-		grid-column: 1 / 2;
-		grid-row: 4 / 5;
-		margin: 0;
-		@include mixins.respond(Laptop) {
-			grid-column: unset;
-			grid-row: 2 / 3;
-		}
-	}
-	&__tags {
-		grid-column: 2 / 3;
-		grid-row: 4 / 5;
-		margin: 1em 0;
-		@include mixins.respond(Laptop) {
-			grid-column: unset;
-			grid-row: 8 / 9;
+	&__content {
+		&--title {
+			margin: 0;
 		}
 	}
 	&__content {
-		grid-column: 1 / 2;
-		@include mixins.respond(Laptop) {
-			grid-column: unset;
-			grid-row: 4 / 5;
-		}
+		margin-bottom: 3rem;
 	}
 	&__register {
-		margin: 1.5em 0;
-		@include mixins.respond(Laptop) {
-			grid-row: 5 / 6;
-		}
-	}
-	&__related-events {
-		grid-column: 1 / 2;
-		@include mixins.respond(Laptop) {
-			grid-column: unset;
-			grid-row: 9 / 10;
-		}
+		margin-top: auto;
 	}
 
 	&__sidebar {
 		@include mixins.displayFlex(column);
-		grid-row: 3 / 4;
 		padding: 1em;
 		& > div {
 			margin: 1.5em 0;
 		}
 		@include mixins.respond(Laptop) {
 			padding: 0;
-			grid-column: unset;
-			grid-row: 7 / 8;
 		}
-	}
-	&__occurences {
-		grid-row: 6 / 7;
 	}
 }
 
 .the-sidebar {
-	grid-column: 2 / 3;
-	grid-row: 4 / 7;
-	@include mixins.respond(Laptop) {
-		grid-column: 1 / 2;
-		grid-row: auto;
-	}
-
 	&__header {
-		grid-row: 1 / 2;
 		h2 {
 			height: fit-content;
 			margin: 0;
-		}
-		@include mixins.respond(Laptop) {
-			grid-row: auto;
-		}
-	}
-	&__social {
-		grid-row: 5 / 6;
-	}
-	&__schedule {
-		grid-row: 4 / 5;
-		@include mixins.respond(Laptop) {
-			grid-row: auto;
-		}
-	}
-	&__calendar {
-		grid-row: 3 / 4;
-		@include mixins.respond(Laptop) {
-			grid-row: auto;
 		}
 	}
 }

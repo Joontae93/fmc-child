@@ -6,6 +6,10 @@ Hi there! This theme was built by [K.J. Roelke](https://kjroelke.online) during 
 
 ## Changelog
 
+## v2.3
+
+- updated MEC Event Single.php page to utilize `position:sticky` and reduce code complexity.
+
 ## 2.2.0
 
 - Updated `init()`

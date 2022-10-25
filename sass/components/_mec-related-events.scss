@@ -1,16 +1,47 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
-.mec-related-events {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(150px, 300px));
-	gap: 2em;
-	width: 100%;
-	.mec-related-event-post.col-md-3.col-sm-3 {
-		transition: all variables.$transition--standard;
-		&:hover {
-			cursor: pointer;
-			transform: translateY(-4px);
-			@include mixins.dropShadow;
+.the-event__related-events {
+	margin-top: 8rem;
+	.mec-related-events {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+		gap: 2em;
+		width: 100%;
+		margin: 0;
+		&-wrap {
+			margin-top: unset;
+		}
+		.mec-related-event {
+			&-post {
+				position: relative;
+				border: 1px solid variables.$color-primary;
+				border-radius: 1rem;
+				overflow: hidden;
+				figure a img {
+					object-fit: contain;
+				}
+
+				&.col-md-3.col-sm-3 {
+					transition: all variables.$transition--standard;
+					&:hover {
+						cursor: pointer;
+						transform: translateY(-4px);
+						@include mixins.dropShadow;
+					}
+				}
+			}
+			&-content {
+				margin: 0;
+				padding: 1rem;
+				span {
+					display: block;
+					position: absolute;
+					top: -2rem;
+					padding: 1rem;
+					background-color: rgba(lighten(variables.$color-primary, 20%), 0.95);
+					color: white;
+				}
+			}
 		}
 	}
 }
