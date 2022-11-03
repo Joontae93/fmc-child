@@ -1,14 +1,30 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 .the-sidebar {
+	& > div:not(.the-event-meta) {
+		margin-top: 4rem;
+	}
 	&__header {
 		margin: 0;
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
+		color: variables.$color-secondary;
 	}
-
+	&__social {
+		.mec-social-single.mec-frontbox-title {
+			margin: 0;
+		}
+		.mec-links-details ul {
+			@include mixins.displayFlex(row, space-evenly);
+			list-style: none;
+			margin: 0;
+			.mec-event-social-icon {
+				font-size: 2.5em;
+				margin: 0 5px;
+			}
+		}
+	}
 	&__calendar {
 		.mec-event-export-module.mec-frontbox {
-			margin: 1em 0;
 			.mec-export-details ul {
 				@include mixins.displayFlex(row, space-evenly, flex-start, nowrap);
 				list-style: none;
@@ -29,21 +45,6 @@
 						}
 					}
 				}
-			}
-		}
-	}
-	&__social {
-		margin-top: 8rem;
-		.mec-social-single.mec-frontbox-title {
-			margin: 0;
-		}
-		.mec-links-details ul {
-			@include mixins.displayFlex(row, space-evenly);
-			list-style: none;
-			margin: 0;
-			.mec-event-social-icon {
-				font-size: 2.5em;
-				margin: 0 5px;
 			}
 		}
 	}

@@ -1,23 +1,63 @@
 @use '../abstracts/mixins';
+@use '../abstracts/variables';
 
 .the-event-meta {
 	background-color: #f7f7f7;
-	height: fit-content;
-	@include mixins.displayFlex(row, space-around);
-	padding: 1rem;
-	.mec-single-event {
-		&-date {
-			@include mixins.displayFlex(column, center, flex-start);
+	border-radius: 1rem;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	row-gap: 3rem;
+	&__date {
+		grid-row: 1/ 2;
+		grid-column: 1 / 2;
+	}
+	&__time {
+		grid-row: 1/ 2;
+		grid-column: 2 / 3;
+	}
+	&__location {
+		grid-row: 3 / 4;
+		grid-column: 1 / -1;
+	}
+	&__cost {
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+		.mec-event-cost {
 			margin: 0;
 			padding: 0;
-			& dl {
+		}
+	}
+	& > div:not(.the-event-meta__countdown) > div > div {
+		display: grid;
+		grid-template-columns: 10% 90%;
+		column-gap: 1rem;
+		align-items: center;
+		i {
+			grid-column: 1 /2;
+			color: variables.$color-secondary;
+		}
+		h3 {
+			grid-column: 2 /3;
+		}
+		dl {
+			grid-column: 1 / -1;
+			grid-row: 2 / 3;
+			margin: 0;
+			dd {
 				margin: 0;
-				dd {
-					margin: 0;
-				}
 			}
 		}
+	}
+	.mec-single-event {
+		&-date {
+			margin: 0;
+			padding: 0;
+		}
 		&-time {
+			@extend .mec-single-event-date;
+		}
+		&-location {
 			@extend .mec-single-event-date;
 		}
 	}

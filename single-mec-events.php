@@ -33,6 +33,9 @@ get_header();
                         <? the_post_thumbnail('full'); ?>
                     </figure>
                     <aside class="the-event__meta the-event-meta">
+                        <div class="the-event-meta__countdown">
+                            <? $single->display_countdown_widget($single_event_main); ?>
+                        </div>
                         <? if ($tags) : ?>
                         <div class="the-event-meta__tags">
                             <h4>Tags: </h4>
@@ -53,6 +56,9 @@ get_header();
                     <div class="the-event__register">
                         <? $single->display_register_button_widget($single_event_obj); ?>
                     </div>
+                    <aside class="the-event__hourly-schedule">
+                        <? $single->display_hourly_schedules_widget($single_event_obj); ?>
+                    </aside>
                     <section class="the-event__related-events">
                         <? $single->display_related_posts_widget($single_event_obj); ?>
                     </section>
@@ -62,26 +68,29 @@ get_header();
                 </div>
                 <div class="x-col">
                     <aside class="the-sidebar">
-                        <div class="the-sidebar__header">
-                            <h2>More Info</h2>
-                            <div class="the-event-meta">
-                                <div class="the-event-meta__date">
-                                    <? $single->display_date_widget($single_event_obj); ?>
-                                </div>
-                                <div class="the-event-meta__time">
-                                    <? $single->display_time_widget($single_event_obj); ?>
-                                </div>
+                        <h2 class="the-sidebar__header">More Info</h2>
+                        <div class="the-event-meta">
+                            <div class="the-event-meta__date">
+                                <? $single->display_date_widget($single_event_obj); ?>
+                            </div>
+                            <div class="the-event-meta__time">
+                                <? $single->display_time_widget($single_event_obj); ?>
+                            </div>
+                            <div class="the-event-meta__location">
+                                <? $single->display_location_widget(get_the_ID()); ?>
+                                <? $single->show_other_locations($single_event_obj); ?>
+                            </div>
+                            <div class="the-event-meta__cost">
+                                <? $single->display_cost_widget($single_event_obj); ?>
                             </div>
                         </div>
+
 
                         <div class="the-sidebar__occurences">
                             <? $single->display_next_prev_widget($single_event_obj); ?>
                         </div>
                         <div class="the-sidebar__social">
                             <? $single->display_social_widget($single_event_obj); ?>
-                        </div>
-                        <div class="the-sidebar__schedule">
-                            <? $single->display_hourly_schedules_widget($single_event_obj); ?>
                         </div>
                         <div class="the-sidebar__calendar">
                             <? $single->display_export_widget($single_event_obj); ?>

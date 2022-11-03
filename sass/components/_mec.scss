@@ -1,8 +1,20 @@
-.mec-events {
-	h3 {
-		margin: 0;
+.x-container {
+	.mec-breadcrumbs {
+		margin: 5rem auto 2rem auto;
 	}
-}
-.x-container.mec-breadcrumbs {
-	margin: 2em auto;
+	.mec-events {
+		margin-top: 2rem;
+		h3 {
+			margin: 0;
+		}
+
+		.x-col:last-child {
+			border-radius: 1rem;
+			background-color: #f7f7f7;
+			padding: 2rem;
+			@media only screen and (min-width: 979px) {
+				box-shadow: 2px 2px 4px rgba(black, 0.25);
+			}
+		}
+	}
 }
