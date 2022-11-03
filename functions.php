@@ -23,7 +23,7 @@ add_filter('x_enqueue_parent_stylesheet', '__return_true');
 // =============================================================================
 function child_enqueue_styles() {
     wp_enqueue_style('fmcStyles', get_stylesheet_directory_uri() . '/build/index.css', array(), '3.2.0');
-    wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '2.2.0', true);
+    wp_enqueue_script('fmcJS', get_stylesheet_directory_uri() . '/build/index.js', array(), '2.3.1', true);
     wp_localize_script('fmcJS', 'fmcData', array(
         'root_url' => get_site_url(),
         'today' => array(

@@ -6,6 +6,10 @@ Hi there! This theme was built by [K.J. Roelke](https://kjroelke.online) during 
 
 ## Changelog
 
+## v2.4.1
+
+- Update JS to better handle MEC Event Single's Related Events `click` and also fix a bug with the Wednesday Night Meals not disappearing like they were supposed to.
+
 ## v2.4
 
 - Updated MEC Event Single.php to include more modules from MEC and have better styling.

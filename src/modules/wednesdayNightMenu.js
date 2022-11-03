@@ -16,8 +16,9 @@ export function menuControl() {
 		mealDateStrings.forEach((el, i, arr) => (arr[i] = parseInt(el)));
 		const [month, date, year] = mealDateStrings;
 		if (
-			parseInt(fmcData.today.month) >= month &&
-			parseInt(fmcData.today.dayNum) > date
+			month < parseInt(fmcData.today.month) ||
+			(month === parseInt(fmcData.today.month) &&
+				parseInt(fmcData.today.dayNum) > date)
 		) {
 			el.style.display = 'none';
 		}
