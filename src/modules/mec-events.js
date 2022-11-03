@@ -1,6 +1,15 @@
-export function relatedEventsControl() {
-	const theEvents = document.querySelector('.the-event__related-events');
-	const eventsContainer = document.querySelector('.mec-related-events');
-	if (eventsContainer.children.length > 0) return;
-	theEvents.style.display = 'none';
+export class MECEvents {
+	eventsContainer = document.querySelector('.mec-related-events');
+	theEvents = this.eventsContainer.children;
+	constructor() {
+		this.relatedEventsControl();
+	}
+	relatedEventsControl() {
+		this.eventsContainer.addEventListener('mouseup', (ev) => {
+			let eventLink = ev.target
+				.closest('article.mec-related-event-post')
+				.children[0].querySelector('a').href;
+			window.location.href = eventLink;
+		});
+	}
 }

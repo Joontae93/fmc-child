@@ -1,7 +1,7 @@
 import '../sass/main.scss';
 import { sundayMornings } from './modules/hub';
 import { jobless } from './modules/jobs';
-import { relatedEventsControl } from './modules/mec-events';
+import { MECEvents } from './modules/mec-events';
 import { copyright } from './modules/utilities';
 import { menuControl } from './modules/wednesdayNightMenu';
 
@@ -11,7 +11,9 @@ function init() {
 	if (href.includes('/hub')) sundayMornings();
 	if (href.includes('/jobs')) jobless();
 	if (href.includes('/menu')) menuControl();
-	if (href.includes('/events/')) relatedEventsControl();
+	if (href.includes('/events/')) {
+		const eventsControl = new MECEvents();
+	}
 }
 
 init();
